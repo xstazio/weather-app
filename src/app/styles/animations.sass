@@ -1,0 +1,68 @@
+.ng-hide-remove, .ng-show-add
+	transition: 0.5s linear all
+
+.ng-hide-add, .ng-show-remove
+	opacity: 1
+
+.ng-hide-add.ng-hide-add-active, .ng-show-remove.ng-show-remove-active
+	opacity: 0
+
+.ng-hide-remove, .ng-show-add
+	opacity: 0
+
+.ng-hide-remove.ng-hide-remove-active, .ng-show-add.ng-show-add-active
+	opacity: 1
+
+.slide-fade-toggle
+	max-height: 1000px // Заведомо большее значение
+	transition: all linear 0.3s
+	overflow: hidden
+	opacity: 1
+
+.slide-fade-toggle.ng-hide
+	max-height: 0
+	opacity: 0
+
+/* Начало появления */
+.slide-fade-toggle.ng-enter 
+	max-height: 0
+	opacity: 0
+
+/* Конец появления */
+.slide-fade-toggle.ng-enter-active
+	max-height: 999px
+	opacity: 1
+
+/* Начало исчезания */
+.slide-fade-toggle.ng-leave
+	max-height: 999px
+	opacity: 1
+
+/* Конец исчезания */
+.slide-fade-toggle.ng-leave-active
+	max-height: 0
+	opacity: 0
+
+
+.fade-toggle
+	transition: all linear 0.4s
+	opacity: 1
+
+.fade-toggle.ng-hide
+	opacity: 0
+
+/* Начало появления */
+.fade-toggle.ng-enter 
+	opacity: 0
+
+/* Конец появления */
+.fade-toggle.ng-enter-active
+	opacity: 1
+
+/* Начало исчезания */
+.fade-toggle.ng-leave
+	opacity: 1
+
+/* Конец исчезания */
+.fade-toggle.ng-leave-active
+	opacity: 0

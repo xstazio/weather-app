@@ -1,0 +1,43 @@
+<div class="panel panel-default">
+	<div class="panel-heading">Weather app</div>
+	<div class="panel-body">
+		<form class="form-inline">
+		  <div class="form-group">
+		    <input type="text" 
+		    	class="form-control" 
+		    	placeholder="City name"
+		    	ng-model="newCity">
+		  </div>
+		  <button type="submit"
+		  	class="btn btn-primary"
+		  	ng-click="addCity(newCity)">Add city</button>
+		</form>
+
+		<ul city-select>
+			<li class="city-name" 
+				ng-repeat="city in citiesList">
+				<a href="" ng-click="showWeather(city)">{{city}}</a> <button class="btn btn-danger btn-xs" ng-click="removeCity(city)"><i class="fa fa-times"></i></button>
+			</li>
+			<li><a href="" ng-click="showWeather()">Current location</a></li>
+		</ul>
+
+		<div ng-if="weatherForecast" class="jumbotron">
+			<h2>{{weatherForecast.weather[0].main}}</h2>
+			<h3>{{weatherForecast.weather[0].description}}</h3>
+			<table class="table">
+				<tr>
+					<th>Location</th>
+					<th>Temperature</th>
+					<th>Pressure</th>
+				</tr>
+				<tr>
+					<td>{{weatherForecast.name}}</td>
+					<td>{{Math.round(weather.main.temp)}} ºC</td>
+					<td>{{weatherForecast.main.pressure}} hpa</td>
+				</tr>
+			</table>
+			<button class="btn btn-info"
+				ng-click="downloadFile(weather.name)">Save</button>
+		</div>
+	</div>
+</div>
