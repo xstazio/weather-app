@@ -13,7 +13,8 @@
 		  	ng-click="addCity(newCity)">Add city</button>
 		</form>
 
-		<ul city-select>
+		<ul city-select
+			class="cities-list">
 			<li class="city-name" 
 				ng-repeat="city in citiesList">
 				<a href="" ng-click="showWeather(city)">{{city}}</a> <button class="btn btn-danger btn-xs" ng-click="removeCity(city)"><i class="fa fa-times"></i></button>
