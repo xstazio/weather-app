@@ -11,9 +11,8 @@ angular.module 'weatherApp'
 	$scope.citiesList = ['London', 'Moscow', 'Paris']
 
 	$scope.addCity = (newCity) ->
-		console.log $scope.citiesList
-		for city in $scope.citiesList when city is newCity
-			console.log 'already on the list'
+		for city in $scope.citiesList when city.toLowerCase() is newCity.toLowerCase()
+			alert 'This city is already on the list!'
 			return
 		$scope.citiesList.push newCity
 		$scope.citiesList.sort(sortCities)
