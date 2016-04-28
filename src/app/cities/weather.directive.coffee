@@ -3,7 +3,7 @@
 
 angular.module 'weatherApp'
 
-# Проверка, видим ли элемент, и добавление соотв. классов
+# Adding class 'active' on click
 .directive 'citySelect', () ->
 	restrict: 'A',
 	scope: {}
